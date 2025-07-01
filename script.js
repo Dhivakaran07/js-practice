@@ -11,3 +11,4 @@ let students=['dhiva','nithish','kathir','sanjay'];
 // console.log(students.slice(2,5));
 console.log(students.splice(1,2,'wakali'))
 console.log(students)
+console.log(students.join(" ,"))
