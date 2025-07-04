@@ -1,48 +1,39 @@
-// The object are nothing but it contains keys and value it having four values 
-    /*  1.literal
-        2.constructor
-        3.function
-        4.object creation
-    */
-//1.literal way
-// let students={studentnames:"dhiva",age:19,mode:"online",info:"alive"}
-// console.log(students)
-// //2.constructor way
-// let college=new Object();
-// college.name="dhiva";
-// college.age=19;
-// college.mode="online";
-// console.log(college);
-//if we want to separate value use to property
-        /*1.dot  -not modify like fixed
-          2.bracket - in this case we easily use key as string
-        */
-//1.dot
+/* function are used to call back and reusabilty*/
+/*1.function decalaration
+  2.function with parameter
+  3.function with return
+  4,function with default
+  */
+//  1.function decalaration
 
-// studentsRes=students.age;
-// console.log(studentsRes);
+function decalaration(){
+    let a=10;
+    let b=20;
+    console.log(a+b)
+}
+decalaration()
 
-// // normal bracket
-// console.log(students["age"]);
-// //2.bracket with modify
-// ele1="names";
-// studentsres=students["student"+ele1]
-// console.log(studentsres);
-// // to add or modify
-// let res=students.mode="offline"
-// console.log(res)
-// console.log(students);
+//   2.function with parameter
 
-// // to add
-// let added=students.info="active";
-// console.log(added);
-// console.log(students);
-// //delete
-// console.log(delete students.mode);
-// console.log(students);
+function parameters(a,b)
+{
+    console.log(a+b)
+}
+parameters(10,20)
 
+//   3.function with return
 
-// let value=prompt("enter a alphabets")
-// let count=value.count(value);
-// console.log(count);
+function resturns(a,b)
+{
+    return a+b
+    // return b     in this case we use only one time
+}
+let res=resturns(10,333)  /*in this case we store also one variable non retrun we does not do this*/
+console.log(res)
 
+//  4,function with default
+
+function defaullt(a,b=20){
+    console.log(a+b)
+}
+defaullt(2)
