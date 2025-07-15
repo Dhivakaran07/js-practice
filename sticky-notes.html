@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>notes</title>
+    <style>
+      div{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        margin: 90px;
+        position: relative;
+        right: 70px;
+      }
+      textarea{
+        height: 200px;
+        width: 200px;
+      }
+      button{
+        height: 200px;
+        width: 200px;
+      }
+      .container{
+        background-color: red;
+      }
+    </style>
+</head>
+<body>
+    <center >
+    <div class="container">
+        <div id="note1">
+            <textarea placeholder="Enter your notes"></textarea>
+        </div>
+         <div id="note2">
+            <textarea placeholder="Enter your notes"></textarea>
+        </div>
+         
+        <div>
+            <button id="button">
+                Add Notes
+            </button>
+        </div>
+    </div>
+    </center>
+    <script>
+        document.getElementById("note1").addEventListener("dblclick",(event)=>{
+            if(confirm("Are you sure to delete this")){
+                event.target .value="";
+                event.blur()
+            }
+             })
+            document.getElementById("note2").addEventListener("dblclick",(event)=>{
+            if(confirm("Are you sure to delete this")){
+                event.target .value="";
+                event.blur()
+            }
+        })
+       
+    </script>
+</body>
+</html>
