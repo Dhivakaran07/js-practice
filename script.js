@@ -1,39 +1,38 @@
-/* function are used to call back and reusabilty*/
-/*1.function decalaration
-  2.function with parameter
-  3.function with return
-  4,function with default
-  */
-//  1.function decalaration
+/* fetch is used to make requests to APIs or other external resources.
+It returns a Promise. We use `.then()` to handle the response and 
+process the data. If there's an error during the fetch, `.catch()` 
+is used to handle the error.
 
-function decalaration(){
-    let a=10;
-    let b=20;
-    console.log(a+b)
+
+Promises which is used to to operate the asynchrnouns code and then it gives correct element and the wrong element in catch
+*/
+
+//  Fetch data
+
+fetch('https://dummyjson.com/products').then((res) => {
+    return res.json();
+}).then((data) => data.products.forEach((produc, index) => {
+    console.log(index + "=>" + produc.title)
+})).catch((error) => console.log("error", error))
+
+
+// promises
+function promised() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            let Institute = false;
+            if (Institute) {
+                resolve("he is presented")
+            }
+            else {
+                reject("it is not print")
+            }
+        }, 5000);
+
+    });
 }
-decalaration()
-
-//   2.function with parameter
-
-function parameters(a,b)
-{
-    console.log(a+b)
-}
-parameters(10,20)
-
-//   3.function with return
-
-function resturns(a,b)
-{
-    return a+b
-    // return b     in this case we use only one time
-}
-let res=resturns(10,333)  /*in this case we store also one variable non retrun we does not do this*/
-console.log(res)
-
-//  4,function with default
-
-function defaullt(a,b=20){
-    console.log(a+b)
-}
-defaullt(2)
+promised().then((result) => {
+    console.log("anser", result)
+}).catch((op) => {
+    console.log("error", op)
+})
