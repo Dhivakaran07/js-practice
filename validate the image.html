@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Password Strength by Length</title>
+  <style>
+    #background {
+      background-image: url("https://images.unsplash.com/photo-1556745757-8d76bdb6984b");
+      background-size: cover;
+      height: 500px;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: opacity 0.5s ease;
+      width: 1000px;
+      opacity: 0.5;
+    }
+
+    #login {
+      position: relative;
+      bottom: 450px;
+      background-color: white;
+      color: black;
+      padding: 100px;
+      height: 200px;
+      width: 250px;
+    }
+  </style>
+</head>
+<body>
+  <center>
+    <div id="background"></div>
+    <form id="login" >
+      <h2>Password Length Detection</h2>
+      <label>Email</label>
+      <input id="Email" type="email" /><br /><br />
+      <label>Password</label>
+      <input id="psw" type="password" oninput="password()" />
+    </form>
+  </center>
+
+  <script>
+    function password() {
+      let pswLength = document.getElementById("psw").value.length;
+      let back = document.getElementById("background");
+
+      if (pswLength === 1) {
+        back.style.opacity = 0.1;
+      } else if (pswLength === 2) {
+        back.style.opacity = 0.2;
+      } else if (pswLength >= 3 && pswLength <= 5) {
+        back.style.opacity = 0.5;
+      } else if (pswLength > 5) {
+        back.style.opacity = 1;
+      } else {
+        back.style.opacity = 0.3; 
+      }
+
+      console.log("Password Length:", pswLength);
+    }
+  </script>
+</body>
+</html>

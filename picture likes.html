@@ -1,0 +1,151 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>like button</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+       
+        img{
+           position: relative;
+           top: 100px;
+           cursor: pointer;
+           
+        }
+        .heart{
+            animation: heart 0.5s ease;
+            position: relative;
+            left: 600px;
+            cursor: pointer;
+        }
+        @keyframes heart{
+            0%{
+                transform: scale(1.0);
+                visibility: hidden;
+            }
+            50%{
+                transform: scale(1.5);
+            }
+            100%{
+                transform: scale(1.0);
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <center>
+    <h4>Double Click Heart</h4>
+    <div id="add"></div>
+    <img src=https://www.financialexpress.com/wp-content/uploads/2024/06/Chevrolet_Camaro_SS.jpg?w=500 ondblclick="dbclick()">
+    </center>
+     <div class="heart" ondblclick="dbclick()">❤️</div>
+    <script>
+      count=0
+      function dbclick() {
+      let add = document.getElementById("add");
+      let img=document.getElementsByTagName("img")
+      let heart=document.getElementsByClassName("heart")
+      count++;
+      add.innerHTML = `Likes: ${count}`;
+      heart.classList.add("heart");
+
+      
+    }
+
+    </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Instagram-like Heart</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    .image-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    img {
+      width: 500px;
+      height: auto;
+      cursor: pointer;
+    }
+
+    .heart-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      font-size: 100px;
+      color: red;
+      opacity: 0;
+      pointer-events: none;
+      animation: none;
+    }
+
+    .show {
+      animation: pop 0.6s ease forwards;
+    }
+
+    @keyframes pop {
+      0% {
+        transform: translate(-50%, -50%) scale(0.3);
+        opacity: 0;
+      }
+      50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0;
+      }
+    }
+
+    #add {
+      margin-top: 20px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h4>Double Click the Car</h4>
+  <div id="add">Likes: 0</div>
+
+  <div class="image-container" ondblclick="dbclick()">
+    <img src="https://www.financialexpress.com/wp-content/uploads/2024/06/Chevrolet_Camaro_SS.jpg?w=500" />
+    <div class="heart-icon" id="heart">❤️</div>
+  </div>
+
+  <script>
+    let count = 0;
+
+    function dbclick() {
+      count++;
+      document.getElementById("add").innerText = `Likes: ${count}`;
+
+      const heart = document.getElementById("heart");
+      heart.classList.add("show");
+
+      // Remove animation class after animation ends so it can re-trigger
+      setTimeout(() => {
+        heart.classList.remove("show");
+      }, 600); // match with animation duration
+    }
+  </script>
+</body>
+</html>
+
