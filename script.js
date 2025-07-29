@@ -1,38 +1,40 @@
-/* fetch is used to make requests to APIs or other external resources.
-It returns a Promise. We use `.then()` to handle the response and 
-process the data. If there's an error during the fetch, `.catch()` 
-is used to handle the error.
+/*
 
 
-Promises which is used to to operate the asynchrnouns code and then it gives correct element and the wrong element in catch
-*/
-
-//  Fetch data
-
-fetch('https://dummyjson.com/products').then((res) => {
-    return res.json();
-}).then((data) => data.products.forEach((produc, index) => {
-    console.log(index + "=>" + produc.title)
-})).catch((error) => console.log("error", error))
+async is use to returns the promises 
+awit is use to it waits when promises print then it is print
 
 
-// promises
-function promised() {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            let Institute = false;
-            if (Institute) {
-                resolve("he is presented")
-            }
-            else {
-                reject("it is not print")
-            }
-        }, 5000);
-
-    });
+*/ 
+ 
+// it is nested function
+function later(){
+  return new Promise((resolve)=>{
+  setTimeout(()=>{
+  let discussion=true;
+  if(discussion){
+  resolve("it is successfull")
+  }
+  },3000)
+})};
+ async function after(){
+  console.log("what is the discusion")
+  let result= await later()
+  console.log(result)
+  console.log("the discussion is finished")
 }
-promised().then((result) => {
-    console.log("anser", result)
-}).catch((op) => {
-    console.log("error", op)
-})
+after()
+
+// without nested we have to nested we use
+
+async function nonest(){
+ let result= await new   Promise((resolve=>{
+    discussion=true;
+    if(discussion){
+    resolve("it is succes")
+  
+    }
+  }))
+    console.log(result)
+}
+nonest()
