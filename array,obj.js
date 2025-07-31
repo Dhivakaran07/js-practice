@@ -32,7 +32,6 @@ let arr2=[...arr1];
 console.log(arr2)
 */
 
-
 /*
 // use to merge the arrays:
 
@@ -103,7 +102,7 @@ let {...details}=Details;
 console.log(details)
 */
 
-console.log(`*********function destructure**********`)
+/*console.log(`*********function destructure**********`)
 
 function add(a,b,others){
     console.log(a+b)
@@ -113,6 +112,38 @@ function add(a,b,others){
 let values=[1,10,12,13,14,15]
 let[a,b,...others]=values;
 add(a,b,others)
+*/
+
+/* console.log(`*******skipping in objects*******`)
+let details={
+    name:"dhivakaran",
+    age:19,
+    role:"developer"
+}
+let{name,,role}=details
+*/
+
+/*console.log(`*********modern operator*********`)
+// Nullish coalescing
+let score=10;
+let result=score??10
+*/
+
+console.log(`********optionam operator*******`)
+let details={
+    name:"dhiva",
+    age:19,
+   others:{
+    native:"dhiva",
+    district:"tiruchirappalli"
+   }
+}
+
+console.log(details?.class)
+
+
+
+
 
 
 
