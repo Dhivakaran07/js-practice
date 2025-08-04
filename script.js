@@ -1,12 +1,34 @@
 /*
-This code uses the Geolocation API to get the current location (latitude and longitude) of the user. It asks for permission in the browser and returns the coordinates if the user allows.
+Advance loops are used to iterate objects like arrays and strings etc...
 
+1.for.. of loops
+2.for.. in loops
+3.for.each loops
 */ 
 
-navigator.geolocation.getCurrentPosition((position)=>{
-    console.log(position)
-},
-(err)=>{
-    console.log(err)
+let named =['dhiva','nithish','sanjay','kathir']
+for(let names of named){
+    console.log(names)
 }
-);
+
+
+let obj={name:'dhiva',age:19,college:'bishop',working:'software developer'}
+
+for(let objs in obj){
+    console.log(objs+"="+obj[objs])
+}
+named.forEach (function(named,index){
+    console.log(named)
+
+});
+
+/*
+
+Adavnced array methods:
+1.filter
+2.sort
+3.reduce
+4.some
+5.find
+
+*/ 
