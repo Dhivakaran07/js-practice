@@ -118,16 +118,34 @@ document.body.appendChild(ParentElement);
 
 
 
-  const input = document.getElementById("inputBox");
-  const status = document.getElementById("status");
+  // const input = document.getElementById("inputBox");
+  // const status = document.getElementById("status");
 
-  input.addEventListener("keydown", function(event) {
-    status.textContent = "Key DOWN: " + event.key
-  });
+  // input.addEventListener("keydown", function(event) {
+  //   status.textContent = "Key DOWN: " + event.key
+  // });
 
-  input.addEventListener("keyup", function(event) {
-    status.textContent = "Key UP: " + event.key
-  });
+  // input.addEventListener("keyup", function(event) {
+  //   status.textContent = "Key UP: " + event.key
+  // });
+let btn=document.getElementById('btn')
+let list=document.querySelector("ul")
+btn.addEventListener('click',details)
+
+function details(){
+  fetch("https://dummyjson.com/users").then((res)=>{
+    return res.json()
+  }).then((data)=>{
+    data.users.forEach((element) => {
+        let li = document.createElement("li");
+        li.textContent = element.firstName; // Add user's first name
+        list.appendChild(li);
+  
+    });
+  })
+
+}
+
 
 
 
