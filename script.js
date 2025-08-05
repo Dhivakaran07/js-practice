@@ -1,40 +1,17 @@
-/*
-
-
-async is use to returns the promises 
-awit is use to it waits when promises print then it is print
-
+/*Error handling in JavaScript is used to detect and manage problems in code. If we know a line may cause an error, we use try...catch to stop the program from crashing. The try block runs the code, and if any error occurs, the catch block will handle it.
 
 */ 
- 
-// it is nested function
-function later(){
-  return new Promise((resolve)=>{
-  setTimeout(()=>{
-  let discussion=true;
-  if(discussion){
-  resolve("it is successfull")
-  }
-  },3000)
-})};
- async function after(){
-  console.log("what is the discusion")
-  let result= await later()
-  console.log(result)
-  console.log("the discussion is finished")
-}
-after()
 
-// without nested we have to nested we use
+function api(){
+    try{
+        let a;
+        let b=10;
+        console.log(a)
+        console.log(b)
 
-/* async function nonest(){
- let result=  new   Promise((resolve=>{
-    discussion=true;
-    if(discussion){
-   resolve("it is succes")  //in this we does not use the await but it is fullfilled because we not use the timers so it prints . we use the timers means is pending
     }
-  }))
-    console.log(result)
+    catch{
+        console.log("it is error")
+    }
 }
-  nonest()
-  */
+api()
