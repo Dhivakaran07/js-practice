@@ -130,7 +130,7 @@ let result=score??10
 */
 
 console.log(`********optionam operator*******`)
-let details={
+let detail={
     name:"dhiva",
     age:19,
    others:{
@@ -139,7 +139,8 @@ let details={
    }
 }
 
-console.log(details?.class)
+console.log(detail?.class)
+
 
 
 
